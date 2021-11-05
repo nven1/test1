@@ -6,7 +6,7 @@ import Endpoints from "../../environments/endpoints";
 import { Button1 } from "../../styled/styled";
 import Logger from "../Logger/Logger";
 import SearchContainer from "../SearchContainer/SearchContainer";
-import { Container, LeftSection, RightSection } from "./Header.styled";
+import { Container } from "./Header.styled";
 
 const Header: React.FC = () => {
   const theme = useContext(ThemeContext);
@@ -14,18 +14,11 @@ const Header: React.FC = () => {
 
   return (
     <Container>
-      <LeftSection>
-        <Link
-          to={Endpoints.appEndpoints.posts}
-          onClick={() => updateSearch("")}
-        >
-          <Button1>Home</Button1>
-        </Link>
-        <Logger render={() => <SearchContainer />} />
-      </LeftSection>
-      <RightSection>
-        <Button1 onClick={() => theme.toggleTheme()}>{theme.mode}</Button1>
-      </RightSection>
+      <Link to={Endpoints.appEndpoints.posts} onClick={() => updateSearch("")}>
+        <Button1>Home</Button1>
+      </Link>
+      <Logger render={() => <SearchContainer />} />
+      <Button1 onClick={() => theme.toggleTheme()}>{theme.mode}</Button1>
     </Container>
   );
 };

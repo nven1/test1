@@ -8,14 +8,12 @@ interface ISearch {
 
 const Search: React.FC<ISearch> = ({ onSearch, query }) => {
   return (
-    <div>
-      <Input
-        type="search"
-        onChange={onSearch}
-        value={query}
-        placeholder="Search users"
-      />
-    </div>
+    <Input
+      type="search"
+      onChange={onSearch}
+      value={query}
+      placeholder="Search users"
+    />
   );
 };
 
